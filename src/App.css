@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  background: radial-gradient(circle, transparent 0%, #F4FDD9 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/src/assets/grid.svg");
+  background-color: #E4FFE1;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: none;
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(at 20% 30%, #6A8D73 0px, transparent 50%),
+                    radial-gradient(at 80% 20%, #F4FDD9 0px, transparent 50%),
+                    radial-gradient(at 50% 80%, #E4FFE1 0px, transparent 50%),
+                    radial-gradient(at 30% 60%, #FFE8C2 0px, transparent 50%),
+                    radial-gradient(at 70% 70%, #F0A868 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.black_btn {
+  @apply rounded-full border border-[#6A8D73] bg-[#6A8D73] py-1.5 px-5 text-sm text-[#F4FDD9] transition-all;
+}
+.black_btn:hover {
+  @apply bg-[#F4FDD9] text-[#6A8D73];
+}
+
+.head_text {
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-[#6A8D73] sm:text-6xl text-center;
+}
+
+.orange_gradient {
+  background: linear-gradient(to right, #6A8D73, #F0A868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  @apply mt-5 text-lg sm:text-xl text-center max-w-2xl;
+  color: #6A8D73; 
+}
+
+.url_input {
+  @apply block w-full rounded-md border border-gray-200 py-2.5 pl-10 pr-12 text-sm shadow-lg font-satoshi font-medium focus:border-[#6A8D73] focus:outline-none focus:ring-0;
+  background-color: #E4FFE1;
+  color: #6A8D73;
+}
+
+.submit_btn {
+  @apply absolute inset-y-0 right-0 my-1.5 mr-1.5 flex w-10 items-center justify-center rounded border border-gray-200 font-sans text-sm font-medium;
+  color: #6A8D73;
+  background-color: #F4FDD9;
+}
+.submit_btn:hover {
+  border-color: #6A8D73;
+  color: #F0A868;
+}
+
+.link_card {
+  @apply p-3 flex justify-start items-center flex-row border border-gray-200 gap-3 rounded-lg cursor-pointer;
+  background-color: #FFE8C2; 
+  color: #6A8D73;
+}
+
+.copy_btn {
+  @apply w-7 h-7 rounded-full flex justify-center items-center cursor-pointer;
+  background-color: #E4FFE1; 
+  box-shadow: inset 10px -50px 94px 0 rgb(199, 199, 199, 0.2);
+  backdrop-filter: blur(10px);
+  color: #6A8D73;
+}
+
+.blue_gradient {
+  background: linear-gradient(to right, #6A8D73, #E4FFE1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary_box {
+  @apply rounded-xl border border-gray-200 p-4;
+  background-color: #F4FDD9;
+  opacity: 0.9;
+  box-shadow: inset 10px -50px 94px 0 rgb(199,199,199,0.2);
+  backdrop-filter: blur(10px);
+  color: #6A8D73;
+}
+
+/* Back Button */
+.back_btn {
+  @apply absolute top-4 left-4 text-lg font-medium px-4 py-2 rounded-md border border-[#6A8D73]
+  bg-[#F4FDD9] text-[#6A8D73] shadow-md hover:bg-[#6A8D73] hover:text-[#F4FDD9] transition-all;
+}
